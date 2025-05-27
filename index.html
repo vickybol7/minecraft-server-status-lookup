@@ -81,35 +81,37 @@
   </div>
 
 <script>
-  // Helper: Get URL query parameter
   function getQueryParam(name) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
   }
 
-  // Get IP from URL
-  const ip = getQueryParam('ip') || 'market-velocity.gl.joinmc.link'; // default fallback
-
-  const API_URL = `https://api.mcstatus.io/v2/status/java/${ip}`;
+  const ip = getQueryParam('ip') || 'market-velocity.gl.joinmc.link';
+  const type = getQueryParam('type') === 'bedrock' ? 'bedrock' : 'java';
+  const API_URL = `https://api.mcstatus.io/v2/status/${type}/${ip}`;
 
   fetch(API_URL)
     .then(response => response.json())
     .then(data => {
       const statusDiv = document.getElementById('status');
+      const isOnline = data.online;
 
-      if (data.online) {
+      if (isOnline) {
         const motd = data.motd?.clean || 'No MOTD';
-        const version = data.version?.name_clean || 'Unknown';
+        const version = data.version?.name_clean || data.version?.name || 'Unknown';
         const players = `${data.players?.online}/${data.players?.max}`;
-        const icon = data.icon || '';
+        const gamemode = data.gamemode || '';
+        const icon = data.icon || ''; // Java only
 
         statusDiv.innerHTML = `
-          <img src="${icon}" alt="Server Icon" class="icon">
+          ${icon ? `<img src="${icon}" alt="Server Icon" class="icon">` : ''}
           <div class="status online">🟢 Online</div>
+          <div class="info"><strong>Type:</strong> ${type.charAt(0).toUpperCase() + type.slice(1)}</div>
           <div class="info"><strong>IP:</strong> ${ip}</div>
           <div class="info"><strong>Version:</strong> ${version}</div>
           <div class="info"><strong>Players:</strong> ${players}</div>
-          <div class="info"><strong>MOTD:</strong> ${motd}</div>
+          ${gamemode ? `<div class="info"><strong>Gamemode:</strong> ${gamemode}</div>` : ''}
+          <div class="info"><strong>MOTD:</strong> ${motd.replace(/\n/g, '<br>')}</div>
         `;
       } else {
         statusDiv.innerHTML = `
@@ -127,4 +129,3 @@
 
 </body>
 </html>
-
