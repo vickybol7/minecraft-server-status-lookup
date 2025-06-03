@@ -15,22 +15,21 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #1e2a2f;
-      color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
     }
 
     #container {
-      background: #2f3e46;
       border-radius: 10px;
       padding: 20px;
       max-width: 90%;
       width: 400px;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      transition: background 0.3s;
     }
 
     h1 {
@@ -73,6 +72,25 @@
         font-size: 20px;
       }
     }
+
+    /* Themes */
+    body.dark {
+      background: #1e2a2f;
+      color: #fff;
+    }
+
+    #container.dark {
+      background: #2f3e46;
+    }
+
+    body.light {
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    #container.light {
+      background: #ffffff;
+    }
   </style>
 </head>
 <body>
@@ -88,8 +106,15 @@
     return urlParams.get(name);
   }
 
-  const ip = getQueryParam('ip') || 'rental-deputy.gl.joinmc.link';
-  const type = getQueryParam('type') === 'bedrock' ? 'bedrock' : 'java';
+  // Handle theme (mode)
+  const mode = getQueryParam('mode');
+  const theme = mode === 'light' ? 'light' : 'dark'; // default = dark
+  document.body.classList.add(theme);
+  document.getElementById('container').classList.add(theme);
+
+  // Server query params
+  const ip = getQueryParam('ip') || 'from-graduates.gl.at.ply.gg:4000';
+  const type = getQueryParam('type') === 'java' ? 'java' : 'bedrock';
   const API_URL = `https://api.mcstatus.io/v2/status/${type}/${ip}`;
 
   fetch(API_URL)
@@ -103,7 +128,7 @@
         const version = data.version?.name_clean || data.version?.name || 'Unknown';
         const players = `${data.players?.online}/${data.players?.max}`;
         const gamemode = data.gamemode || '';
-        const icon = data.icon || ''; // Java only
+        const icon = data.icon || '';
 
         statusDiv.innerHTML = `
           ${icon ? `<img src="${icon}" alt="Server Icon" class="icon">` : ''}
