@@ -1,11 +1,16 @@
 import time
 import requests
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # CONFIG
-LOG_FILE = "logs.txt"
-BOT_TOKEN = "6165663083:AAHigA2Z0IUJYeuvCoGpU5OMCwv84zrx8uo"
-CHAT_ID = "5721393154"
-POLL_INTERVAL = 2  # seconds
+LOG_FILE = os.getenv("LOG_FILE", "logs.txt")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
+POLL_INTERVAL = int(os.getenv("POLL_INTERVAL", 2))  # seconds
 
 def send_telegram_message(message):
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
