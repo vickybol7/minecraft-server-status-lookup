@@ -1,0 +1,55 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:crafting_items_catalog": {
+    "categories": [
+      {
+        "category_name": "nature",
+        "groups": [
+          {
+            "group_identifier": {
+              "icon": "minecraft:chicken_spawn_egg",
+              "name": "minecraft:itemGroup.name.mobEgg"
+            },
+            "items": [
+              "minecraft:happy_ghast_spawn_egg"
+            ]
+          },
+	        {
+            "items": [
+              "minecraft:dried_ghast"
+            ]
+          }
+        ]
+      },
+      {
+        "category_name": "equipment",
+        "groups": [
+          {
+            "group_identifier": {
+              "icon": "minecraft:white_harness",
+              "name": "minecraft:itemGroup.name.harnesses"
+            },
+            "items": [
+              "minecraft:white_harness",
+              "minecraft:light_gray_harness",
+              "minecraft:gray_harness",
+              "minecraft:black_harness",
+              "minecraft:brown_harness",
+              "minecraft:red_harness",
+              "minecraft:orange_harness",
+              "minecraft:yellow_harness",
+              "minecraft:lime_harness",
+              "minecraft:green_harness",
+              "minecraft:cyan_harness",
+              "minecraft:light_blue_harness",
+              "minecraft:blue_harness",
+              "minecraft:purple_harness",
+              "minecraft:magenta_harness",
+              "minecraft:pink_harness"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

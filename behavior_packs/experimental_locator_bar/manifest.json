@@ -1,0 +1,30 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "Experimental behavior pack for Locator Bar content",
+    "name": "Locator Bar",
+    "uuid": "93e465d9-ebb0-4baf-88d8-7f4737e51096",
+    "version": [
+      0,
+      0,
+      1
+    ],
+    "min_engine_version": [
+      1,
+      21,
+      70
+    ]
+  },
+  "modules": [
+    {
+      "description": "Experimental behavior pack for Locator Bar content",
+      "type": "data",
+      "uuid": "a0048b9f-616d-45c3-9471-393b14dedd46",
+      "version": [
+        0,
+        0,
+        1
+      ]
+    }
+  ]
+}
