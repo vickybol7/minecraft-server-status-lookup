@@ -1,0 +1,28 @@
+NO LOG FILE! - setting up server logging...
+[2025-06-05 05:58:36:023 INFO] Starting Server
+[2025-06-05 05:58:36:023 INFO] Version: 1.21.83.1
+[2025-06-05 05:58:36:023 INFO] Session ID: 4a1a90c3-a66d-488a-a1d6-b922176ae2f8
+[2025-06-05 05:58:36:023 INFO] Build ID: 33674285
+[2025-06-05 05:58:36:023 INFO] Branch: r/21_u8
+[2025-06-05 05:58:36:023 INFO] Commit ID: 8ece772699d3e88a1a61d92551395c4d968059b5
+[2025-06-05 05:58:36:023 INFO] Configuration: Publish
+[2025-06-05 05:58:36:023 INFO] Level Name: Bedrock level
+[2025-06-05 05:58:36:024 INFO] No CDN config file found for dedicated server
+[2025-06-05 05:58:36:024 INFO] Game mode: 0 Survival
+[2025-06-05 05:58:36:024 INFO] Difficulty: 1 EASY
+[2025-06-05 05:58:36:025 INFO] Content logging to console is enabled.
+[2025-06-05 05:58:36:434 INFO] Opening level 'worlds/Bedrock level/db'
+[2025-06-05 05:58:36:485 INFO] [SERVER] Pack Stack - None
+[2025-06-05 05:58:37:113 INFO] IPv4 supported, port: 19132: Used for gameplay and LAN discovery
+[2025-06-05 05:58:37:113 INFO] IPv6 supported, port: 19133: Used for gameplay
+[2025-06-05 05:58:37:138 INFO] Server started.
+[2025-06-05 05:58:37:138 INFO] ================ TELEMETRY MESSAGE ===================
+[2025-06-05 05:58:37:139 INFO] Server Telemetry is currently not enabled. 
+[2025-06-05 05:58:37:139 INFO] Enabling this telemetry helps us improve the game.
+[2025-06-05 05:58:37:139 INFO] 
+[2025-06-05 05:58:37:139 INFO] To enable this feature, add the line 'emit-server-telemetry=true'
+[2025-06-05 05:58:37:139 INFO] to the server.properties file in the handheld/src-server directory
+[2025-06-05 05:58:37:139 INFO] ======================================================
+[2025-06-05 05:58:40:830 ERROR] Unknown command: . Please check that the command exists and that you have permission to use it.
+[2025-06-05 05:59:06:467 INFO] Player connected: imvickykumar, xuid: 2535418324842992
+[2025-06-05 05:59:10:464 INFO] Player Spawned: imvickykumar xuid: 2535418324842992, pfid: 5255a1403bbab735
